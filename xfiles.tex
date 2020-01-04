@@ -145,7 +145,7 @@
         exp(tM) = ?
     }
 }
-\begin{align*}
+\begin{gather*}
     \underbrace{
         2t
         \mat{
@@ -159,7 +159,7 @@
     }
     =
     \underbrace{
-        \mat{t z & \frac{z}{2} - 1 & - t z & \frac{z}{2} + 1\\t z & \frac{z}{2} & - t z & \frac{z}{2}\\- t z & 1 & - t z & 1\\- t z & 0 & - t z & 0}
+        \mat{t \zeta & \frac{\zeta}{2} - 1 & - t \zeta & \frac{\zeta}{2} + 1\\t \zeta & \frac{\zeta}{2} & - t \zeta & \frac{\zeta}{2}\\- t \zeta & 1 & - t \zeta & 1\\- t \zeta & 0 & - t \zeta & 0}
     }_{
         P^{-1}
     }
@@ -169,11 +169,23 @@
         J
     }
     \underbrace{
-        \mat{0 & \frac{1}{2 t z} & - \frac{1}{4 t} & \frac{z - 2}{4 t z}\\- \frac{1}{2} & \frac{1}{2} & \frac{1}{2} & - \frac{1}{2}\\0 & - \frac{1}{2 t z} & \frac{1}{4 t} & - \frac{z + 2}{4 t z}\\\frac{1}{2} & - \frac{1}{2} & \frac{1}{2} & - \frac{1}{2}}
+        \mat{0 & \frac{1}{2 t \zeta} & - \frac{1}{4 t} & \frac{\zeta - 2}{4 t \zeta}\\- \frac{1}{2} & \frac{1}{2} & \frac{1}{2} & - \frac{1}{2}\\0 & - \frac{1}{2 t \zeta} & \frac{1}{4 t} & - \frac{\zeta + 2}{4 t \zeta}\\\frac{1}{2} & - \frac{1}{2} & \frac{1}{2} & - \frac{1}{2}}
     }_{
         P
     }
-\end{align*}
+    \\[25pt]
+    \exp(tM) = \exp(P^{-1} J P) = P^{-1} \exp(J) P
+    \\[15pt]
+    \exp(tM) = P^{-1} \mat{
+        e^{- 2 t} & e^{- 2 t} & 0 & 0\\0 & e^{- 2 t} & 0 & 0\\0 & 0 & e^{2 t} & e^{2 t}\\0 & 0 & 0 & e^{2 t}
+    } P
+    \\[25pt]
+\end{gather*}
+\begin{gather*}
+    \exp(tM) = \scalebox{0.5}{$\mat{\frac{\left(- 2 t \zeta - \zeta + \left(- 2 t \zeta + \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4} & \frac{\zeta \left(2 t + \left(2 t - 1\right) e^{4 t} + 1\right) e^{- 2 t}}{4} & \frac{\left(t \zeta + \left(- t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2} & t \zeta \sinh{\left(2 t \right)}\\\frac{\zeta \left(- 2 t + \left(1 - 2 t\right) e^{4 t} - 1\right) e^{- 2 t}}{4} & \frac{\left(2 t \zeta + \zeta + \left(2 t \zeta - \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4} & - t \zeta \sinh{\left(2 t \right)} & \frac{\left(- t \zeta + \left(t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2}\\\frac{\left(t \zeta + \left(- t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2} & t \zeta \sinh{\left(2 t \right)} & \frac{\left(- 2 t \zeta + \zeta + \left(- 2 t \zeta - \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4} & \frac{\zeta \left(2 t + \left(2 t + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{4}\\- t \zeta \sinh{\left(2 t \right)} & \frac{\left(- t \zeta + \left(t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2} & \frac{\zeta \left(- 2 t - \left(2 t + 1\right) e^{4 t} + 1\right) e^{- 2 t}}{4} & \frac{\left(2 t \zeta - \zeta + \left(2 t \zeta + \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4}}$}
+    \\[25pt]
+    \exp(tM) |_{\zeta=0} = \mat{\frac{\left(2 e^{4 t} + 2\right) e^{- 2 t}}{4} & 0 & \frac{\left(e^{4 t} - 1\right) e^{- 2 t}}{2} & 0\\0 & \frac{\left(2 e^{4 t} + 2\right) e^{- 2 t}}{4} & 0 & \frac{\left(e^{4 t} - 1\right) e^{- 2 t}}{2}\\\frac{\left(e^{4 t} - 1\right) e^{- 2 t}}{2} & 0 & \frac{\left(2 e^{4 t} + 2\right) e^{- 2 t}}{4} & 0\\0 & \frac{\left(e^{4 t} - 1\right) e^{- 2 t}}{2} & 0 & \frac{\left(2 e^{4 t} + 2\right) e^{- 2 t}}{4}}
+\end{gather*}
 
 
 \end{document}
