@@ -200,13 +200,53 @@
 \begin{gather*}
     \det \exp(tM) = \exp \Tr(tM) =
     \exp\left( t \Tr(M) \right) =
-    \exp\left( t \left(\zeta+(-\zeta)\right) \right) =
+    \exp\left( 2t \left(\zeta+(-\zeta)\right) \right) =
     \exp(0) = 1
     \\[10pt]
-    \implies \dd{}{t}
+    \implies
+    \forall \zeta:
+    \;\;\;
+    \dd{}{t}
     \iiiint_{\Omega(t)}
     \d{q_1} \d{q_2} \d{p_1} \d{p_2} = 0
-    \;\;\; \forall \zeta
+\end{gather*}
+
+
+\subsection{
+    \texorpdfstring{
+        $\pmb{ p(t)|_{\zeta=0}, \; q(t)|_{\zeta=0} = \mathit{?} }$
+    }{
+        p(t)|\{z=0\}, q(t)|\{z=0\} = ?
+    }
+}
+\begin{gather*}
+    \mat{
+        \bm{q}|_{\zeta=0} \\ \bm{p}|_{\zeta=0}
+    }
+    =
+    \exp(tM)
+    \mat{
+        \bm{q_0} \\ \bm{p_0}
+    }
+    \\[15pt]
+    \left.
+    \mat{
+        q_1(t) \\ q_2(t) \\ p_1(t) \\ p_2(t)
+    }
+    \right|_{\zeta=0}
+    =
+    \mat{\cosh{\left(2 t \right)} & 0 & \sinh{\left(2 t \right)} & 0\\0 & \cosh{\left(2 t \right)} & 0 & \sinh{\left(2 t \right)}\\\sinh{\left(2 t \right)} & 0 & \cosh{\left(2 t \right)} & 0\\0 & \sinh{\left(2 t \right)} & 0 & \cosh{\left(2 t \right)}}
+    \mat{
+        q_{10} \\ q_{20} \\ p_{10} \\ p_{20}
+    }
+    \\[20pt]
+    q_1(t)|_{\zeta=0} = p_{10} \sinh{\left(2 t \right)} + q_{10} \cosh{\left(2 t \right)}
+    \\[5pt]
+    q_2(t)|_{\zeta=0} = p_{20} \sinh{\left(2 t \right)} + q_{20} \cosh{\left(2 t \right)}
+    \\[5pt]
+    p_1(t)|_{\zeta=0} = p_{10} \cosh{\left(2 t \right)} + q_{10} \sinh{\left(2 t \right)}
+    \\[5pt]
+    p_2(t)|_{\zeta=0} = p_{20} \cosh{\left(2 t \right)} + q_{20} \sinh{\left(2 t \right)}
 \end{gather*}
 
 
