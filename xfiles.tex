@@ -78,6 +78,8 @@
 \newcommand{\e}[1]{\const{e}^{#1}}
 \renewcommand{\i}{\const{i}}
 
+\newcommand{\Tr}{\operatorname{Tr}}
+
 \begin{document}
 
 \title{Matematika pro fyziky 1: The X-Files 👽️}
@@ -185,6 +187,21 @@
     \exp(tM) = \scalebox{0.8}{$\mat{\frac{\left(- 2 t \zeta - \zeta + \left(- 2 t \zeta + \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4} & \frac{\zeta \left(2 t + \left(2 t - 1\right) e^{4 t} + 1\right) e^{- 2 t}}{4} & \frac{\left(t \zeta + \left(- t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2} & t \zeta \sinh{\left(2 t \right)}\\\frac{\zeta \left(- 2 t + \left(1 - 2 t\right) e^{4 t} - 1\right) e^{- 2 t}}{4} & \frac{\left(2 t \zeta + \zeta + \left(2 t \zeta - \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4} & - t \zeta \sinh{\left(2 t \right)} & \frac{\left(- t \zeta + \left(t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2}\\\frac{\left(t \zeta + \left(- t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2} & t \zeta \sinh{\left(2 t \right)} & \frac{\left(- 2 t \zeta + \zeta + \left(- 2 t \zeta - \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4} & \frac{\zeta \left(2 t + \left(2 t + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{4}\\- t \zeta \sinh{\left(2 t \right)} & \frac{\left(- t \zeta + \left(t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2} & \frac{\zeta \left(- 2 t - \left(2 t + 1\right) e^{4 t} + 1\right) e^{- 2 t}}{4} & \frac{\left(2 t \zeta - \zeta + \left(2 t \zeta + \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4}}$}
     \\[25pt]
     \exp(tM) |_{\zeta=0} = \mat{\cosh{\left(2 t \right)} & 0 & \sinh{\left(2 t \right)} & 0\\0 & \cosh{\left(2 t \right)} & 0 & \sinh{\left(2 t \right)}\\\sinh{\left(2 t \right)} & 0 & \cosh{\left(2 t \right)} & 0\\0 & \sinh{\left(2 t \right)} & 0 & \cosh{\left(2 t \right)}}
+    \\[25pt]
+\end{gather*}
+
+\subsection{
+    \texorpdfstring{
+        $\pmb{ \det\exp(tM) = \mathit{?} }$
+    }{
+        det exp(tM) = ?
+    }
+}
+\begin{gather*}
+    \det \exp(tM) = \exp \Tr(tM) =
+    \exp\left( t \Tr(M) \right) =
+    \exp\left( t \left(z-z\right) \right) =
+    \exp(0) = 1
 \end{gather*}
 
 
