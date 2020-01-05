@@ -1,0 +1,29 @@
+{
+    "files.associations": {
+        "*.cfg": "gnuplot"
+    },
+
+    "[latex]": {
+        "editor.wordWrap": "on"
+    },
+
+    "[bibtex]": {
+        "editor.wordWrap": "on"
+    },
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk 🔃 + graphs + bibtex",
+            "tools": [
+                "make"
+            ]
+        }
+    ],
+
+    "latex-workshop.latex.tools": [
+        {
+            "name": "make",
+            "command": "make"
+        }
+    ]
+}

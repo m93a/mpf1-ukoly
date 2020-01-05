@@ -1,0 +1,214 @@
+% !TEX program = lualatex
+
+\documentclass{article}
+\usepackage{luaotfload}
+\usepackage{graphicx}
+
+% load cmuntt here not from lua (for everyone except me, it seems)
+\font\cmuntt = cmuntt at 12pt \cmuntt
+\edef\cmunttid{\fontid\cmuntt}
+
+
+\expandafter\let\expandafter\%\csname @percentchar\endcsname
+\directlua {
+ local cbl=luatexbase.callback_descriptions('define_font')
+% print('\string\n======' .. cbl[1] .. '===\string\n')
+original_fontloader=luatexbase.remove_from_callback('define_font',cbl[1])
+luatexbase.add_to_callback('define_font',
+function(name,size,i)
+  if (name=='cmtt10x') then
+% this works in my dev version but for older setups
+% make sure cmuntt.otf has been loaded before we mess
+% up the font loader.
+%  f = original_fontloader('cmuntt.otf',size)
+  f = font.getfont(\cmunttid)
+              f.name = 'cmtt10x'
+              f.type = 'virtual'
+              f.fonts = {{ name = 'cmuntt', size = size}}
+for j,v in pairs(f.characters) do
+  local gr = 0.4*math.random()
+  local gr2 = 0.4*math.random()
+                       v.commands = {
+{'lua','
+  r1 = 0.01*math.random(-10,10)
+pdf.print
+(string.format(" q \%f \%f \%f \%f 0 0 cm ",
+math.cos(r1), - math.sin(r1), math.sin(r1), math.cos(r1)
+))'},
+                           {'special','pdf: ' .. gr2 .. ' g'},
+{'push'},
+{'right', math.random(-20000,20000)},
+{'down', math.random(-20000,20000)},
+                           {'char',j},
+{'pop'},
+{'lua','pdf.print(" Q ")'},
+{'down', math.random(-20000,20000)},
+                           {'special','pdf: ' .. gr .. ' g'},
+                           {'char',j},
+                           {'special','pdf: 0 g'}
+
+                         }
+end
+return f
+else
+return original_fontloader(name,size,i)
+end
+end,
+'define font')
+}
+
+{\count0=0
+\loop
+\global\mathcode\count0=\count0
+\ifnum\count0<256
+\advance\count0 1
+\repeat
+}
+
+\def\sqrt#1{^^^^221a\overline{#1}}
+
+
+\def\ph{\phantom}
+\def\vph{\vphantom}
+\def\hph{\hphantom}
+
+\def\Hat#1{\hat{\vph{A}#1}}
+
+
+\def\partial{\reflectbox{6}}
+\def\nabla{\raisebox{\depth}{\scalebox{1}[-1]{Δ}}}
+\def\={\; = \;}
+\def\+{\; + \;}
+\def\-{\; - \;}
+
+\renewcommand{\d}[1]{\;\const{d}#1}
+\newcommand{\dd}[2]{\frac{\const{d} #1}{\const{d} #2} \;}
+\newcommand{\pd}[2]{\frac{\partial  #1}{\partial  #2} \;}
+
+\newcommand{\sub}[2]{
+  \raisebox{0pt}[0pt][0pt]{#1\raisebox{-0.6ex}{#2}}
+}
+
+
+\begin{document}
+$\relax$
+
+\font\myfont= cmtt10x at 12pt \myfont
+\font\myfonts= cmtt10x at 7pt
+\let\selectfont\relax
+
+\textfont0=\myfont
+\scriptfont0=\myfonts 
+\scriptscriptfont0=\myfonts 
+\textfont1=\myfont
+\textfont2=\myfont
+\textfont3=\myfont
+
+
+\centerline{Matematika pro fyziky 1: Riget}
+\centerline{Mikkel Grnø}
+\centerline{5. jan. 1992}
+
+
+\section*{Pozorování / 1. jan.}
+Ano, přiznávám bez mučení, včera v noci jsem se vloupal do nemocnice. Ale než mě za takový lehkovážný čin odsoudíte, vyslechněte si nejdřív celý příběh. Popravdě je poněkud komické psát tímto tónem, když si tento dokument přečtu nanejvýš já a můj profesor z university, než jej spálím v krbu. Po tom, co jsem včera zažil, je ale netradiční volba vyprávěcího stylu asi ta nejméně bizarní věc.
+
+Můj motiv byl prostý a pragmatický - před svátky mi v nemocnici Riget zemřela babička z matčiny strany a já, vědom si pochybné pověsti nemocnice, rozhodl jsem se vyšťárat na personál nějakou špínu. Nezdárně zakončené doktorské studium mě zanechalo bez peněz i bez práce a vidina nějakého finančního odškodnění za zesnulou příbuznou mě lákala. Využil jsem tedy novoroční vřavy, nepozorovaně rozbil okno v přízemí a vklouzl dovnitř.
+
+Netrvalo mi dlouho proklouznout kolem noční směny v levém křídle - to nealkoholické šampaňské je asi zmohlo, proto všichni tři spokojeně podřimovali. Ani ne za deset minut jsem byl u dveří márnice. Zatímco doteď bylo všechno snadné popsat, správná slova pro to, co následovalo, se mi doteď nedaří najít. Při vzpomínce na včerejšek se mi stále ježí vlasy na zátylku, proto odpusťte, drahý prof. Ørstede, že se události ani nepokusím popsat, ale raději Vás na tuto prokletou půdu dovedu, abyste vše viděl na vlastní oči. Vězte ale, že má teorie - ta nemoderní, nefalsifikovatelná a paravědecká, kterou celý sbor až na Vás odsoudil - má teorie je správná!
+
+
+\section*{Měření / 3. jan.}
+Ubytoval jsem se v hotelu zhruba dva kilometry od nemocnice. Po dni shánění součástek, pájení a montování, podařilo se mi sestrojit eterický interferometr - první svého druhu. Dnes jsem se opět vloupal do nemocnice a provedl pečlivá několikahodinová měření. Má podezření se potvrdila: podařilo se mi naměřit uniformní vír v éteru. Prošel jsem s přístrojem všechna patra, o silné válcové symetrii není pochyb. Rychlostní pole víru lze popsat vzorcem:
+\[
+    v(r, φ, z) \= \frac{Γ}{2πr} \Hat{φ}.
+\]
+Osa $\Hat{z}$ se nachází asi 150 m severně od recepce nemocnice.
+
+Protože při sobě bohužel nemám tabulky, budu si pro práci s válcovými souřadnicemi několik vztahů muset odvodit ručně. Válcové souřadnice jsou definovány:
+\[ x \= r \cos φ \]
+\[ y \= r \sin φ \]
+\[ z \= z        \]
+\\
+Nyní si vyjádřím derivace polohového vektoru podle nových souřadnic:
+\[
+  R \= x\Hat{x} \+ y\Hat{y} \+ z\Hat{z}
+\]
+\[
+  R \= r \cos φ \Hat{x} \+ r \sin φ \Hat{y} \+ z \Hat{z}
+\]
+\\
+\[
+  \sub{e}{r} \= \pd{R}{r} \= \ph{-r} \cos φ \Hat{x} \+ \ph{r} \sin φ \Hat{y}
+\]
+\[
+  \sub{e}{φ} \= \pd{R}{φ} \= -r \sin φ \Hat{x} \+ r \cos φ \Hat{y}
+\]
+\[
+  \sub{e}{z} \= \pd{R}{z} \= \Hat{z}
+\]
+\\
+Velikosti těchto vektorů jsou Lamého koeficienty $\sub{h}{j} \= |\sub{e}{j}|$:
+\[
+  \sub{h}{r} \= \sqrt{ \cos^2 φ \+ \sin^2 φ } \= 1 \hph{r^2 r^2}
+  \vph{\Bigg(}
+\]
+\[
+  \sub{h}{φ} \= \sqrt{ -r^2 \sin^2 φ \+ r^2 \cos^2 φ } \= r
+  \vph{\Bigg(}
+\]
+\[
+  \sub{h}{z} \= 1 \hph{ \= \sqrt{ -r^2 \sin^2 φ \+ r^2 \cos^2 φ }}
+  \vph{\Bigg(}
+\]
+\\
+Jednotkové souřadnicové vektory jsou potom $\Hat{j} = \sub{e}{j} \; / \; \sub{h}{j}$:
+\[
+  \Hat{r} \= \ph{-}
+  \cos φ \; \Hat{x} \+
+  \sin φ \; \Hat{y}
+  \vph{\Big(}
+\]
+\[
+  \Hat{φ} \= -
+  \sin φ \; \Hat{x} \+
+  \cos φ \; \Hat{y}
+  \vph{\Big(}
+\]
+\[
+  \Hat{z} = \Hat{z}
+  \vph{\Big(}
+\]
+\\
+První dvě rovnice jsem vyřešil pro $\Hat{x}, \Hat{y}$:
+\[
+  \Hat{x} \= \cos φ \; \Hat{r} \- \sin φ \; \Hat{φ}
+\]
+\[
+  \Hat{y} \= \sin φ \; \Hat{r} \+ \cos φ \; \Hat{φ}
+\]
+\\
+Z řetízkového pravidla plynou vztahy mezi operátory parciálních derivací:
+\[
+  \pd{}{r} \= \pd{x}{r} \; \pd{}{x} \+ \pd{y}{r} \; \pd{}{y}
+\]
+\[
+  \pd{}{φ} \= \pd{x}{φ} \; \pd{}{x} \+ \pd{y}{φ} \; \pd{}{y}
+\]
+\\
+Vyřešením soustavy dvou rovnic a dosazením derivací jsem získal vztahy pro $\partial / \partial x$ a $\partial / \partial y$:
+\[
+  \pd{}{x} \= \cos φ \; \pd{}{r} \- \frac{1}{r} \sin φ \pd{}{φ}
+\]
+\[
+  \pd{}{y} \= \sin φ \; \pd{}{r} \+ \frac{1}{r} \cos φ \pd{}{φ}
+\]
+\\
+V kartézských souřadnicích vypadá operátor prostorové derivace takto:
+\[
+  \nabla \= \Hat{x}\pd{}{x} \+ \Hat{y}\pd{}{y} \+ \Hat{z}\pd{}{z}
+\]
+
+
+
+\end{document}
