@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.12.11)  5 JAN 2020 16:16
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.12.11)  5 JAN 2020 16:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -343,9 +343,9 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 )
 \verbatim@out=\write4
-runsystem(touch w18-test-202015976.tex)...disabled (restricted).
+runsystem(touch w18-test-202015995.tex)...disabled (restricted).
 
-runsystem(rm -f w18-test-202015976.tex)...disabled (restricted).
+runsystem(rm -f w18-test-202015995.tex)...disabled (restricted).
 
 runsystem(rm -f "xfiles.gnuploterrors")...disabled (restricted).
 
@@ -931,28 +931,36 @@ Missing character: There is no ️ in font [lmroman12-bold]:mapping=tex-text;!
  [1
 
 ]
-Overfull \hbox (54.06534pt too wide) detected at line 199
-[]
- []
-
+File: images/1f602.png Graphic file (type bmp)
+<images/1f602.png>
+File: images/1f44c.png Graphic file (type bmp)
+<images/1f44c.png>
+Missing character: There is no ️ in font lmmi7!
+Missing character: There is no ️ in font lmmi7!
+File: images/1f602.png Graphic file (type bmp)
+<images/1f602.png>
+File: images/1f44c.png Graphic file (type bmp)
+<images/1f44c.png>
+Missing character: There is no ️ in font lmmi7!
+Missing character: There is no ️ in font lmmi7!
 File: arecibo.png Graphic file (type bmp)
 <arecibo.png>
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 272.
-[2] [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 272.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 277.
+ [2] [3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 277.
  (./xfiles.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 272.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 272.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 272.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 277.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 277.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 277.
  )
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 21852 strings out of 493007
- 413955 string characters out of 6136718
- 583642 words of memory out of 5000000
- 25562 multiletter control sequences out of 15000+600000
+ 21860 strings out of 493007
+ 414095 string characters out of 6136718
+ 587000 words of memory out of 5000000
+ 25568 multiletter control sequences out of 15000+600000
  601916 words of font info for 88 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 46i,29n,46p,10465b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,34n,46p,10465b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on xfiles.pdf (3 pages).
