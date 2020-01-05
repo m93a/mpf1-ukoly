@@ -97,7 +97,7 @@
     \\[10pt]
     \dot{q}_j = \pd{H}{p_j}
     \;\;\;\;\;
-    \dot{p}_j = -\pd{H}{q_j} - \zeta \left( \pd{H}{p_1} - \pd{H}{p_2} \right)
+    \dot{p}_j = -\pd{H}{q_j} + (-1)^j \zeta \left( \pd{H}{p_1} - \pd{H}{p_2} \right)
 \end{gather*}
 
 \section{❗️❗️❗️}
@@ -114,18 +114,18 @@
     \bm{v} &= \mat{ \bm{q} \\ \bm{p} } = \mat{ q_1 \\ q_2 \\ p_1 \\ p_2}
     &
     \dot{\bm{v}} &= \mat{
+        \pd{H}{p_1} \\ \pd{H}{p_2} \\
         -\pd{H}{q_1} - \zeta \left( \pd{H}{p_1} - \pd{H}{p_2} \right) \\
-        -\pd{H}{q_2} - \zeta \left( \pd{H}{p_1} - \pd{H}{p_2} \right) \\
-        \pd{H}{p_1} \\ \pd{H}{p_2}
+        -\pd{H}{q_2} + \zeta \left( \pd{H}{p_1} - \pd{H}{p_2} \right)
     }
     =
     \underbrace{
         2
         \mat{
-            0 & 0 & 1 & 0 \\
-            0 & 0 & 0 & 1 \\
-            1 & 0 & - \zeta & \zeta \\
-            0 & 1 & - \zeta & \zeta
+            \ph{-}0 & \ph{-}0 & \ph{-}1 & \ph{-}0 \\
+            \ph{-}0 & \ph{-}0 & \ph{-}0 & \ph{-}1 \\
+            -1      & \ph{-}0 & -\zeta  & \ph{-}\zeta \\
+            \ph{-}0 & -1      & \ph{-}\zeta & -\zeta
         }
     }_M \bm{v}
 \end{align*}
@@ -148,45 +148,53 @@
     }
 }
 \begin{gather*}
+    tM = P^{-1} \; J \; P
+\end{gather*}
+\begin{align*}
     \underbrace{
         2t
         \mat{
-            0 & 0 & 1 & 0 \\
-            0 & 0 & 0 & 1 \\
-            1 & 0 & - \zeta & \zeta \\
-            0 & 1 & - \zeta & \zeta
+            \ph{-}0 & \ph{-}0 & \ph{-}1 & \ph{-}0 \\
+            \ph{-}0 & \ph{-}0 & \ph{-}0 & \ph{-}1 \\
+            -1      & \ph{-}0 & -\zeta  & \ph{-}\zeta \\
+            \ph{-}0 & -1      & \ph{-}\zeta & -\zeta
         }
     }_{
         tM
     }
     =
-    \underbrace{
-        \mat{t \zeta & \frac{\zeta}{2} - 1 & - t \zeta & \frac{\zeta}{2} + 1\\t \zeta & \frac{\zeta}{2} & - t \zeta & \frac{\zeta}{2}\\- t \zeta & 1 & - t \zeta & 1\\- t \zeta & 0 & - t \zeta & 0}
+    &\underbrace{
+        \mat{\i & - \i & \frac{1}{\zeta + \sqrt{\zeta^{2} - 1}} & \frac{1}{\zeta - \sqrt{\zeta^{2} - 1}}\\\i & - \i & - \frac{1}{\zeta + \sqrt{\zeta^{2} - 1}} & \frac{1}{- \zeta + \sqrt{\zeta^{2} - 1}}\\1 & 1 & -1 & -1\\1 & 1 & 1 & 1}
     }_{
         P^{-1}
     }
-    \underbrace{
-        \mat{- 2 t & 1 & 0 & 0\\0 & - 2 t & 0 & 0\\0 & 0 & 2 t & 1\\0 & 0 & 0 & 2 t}
+    \\
+    &\underbrace{
+        \mat{- 2 \i t & 0 & 0 & 0\\0 & 2 \i t & 0 & 0\\0 & 0 & - 2 t \left(\zeta + \sqrt{\zeta^{2} - 1}\right) & 0\\0 & 0 & 0 & 2 t \left(- \zeta + \sqrt{\zeta^{2} - 1}\right)}
     }_{
         J
     }
-    \underbrace{
-        \mat{0 & \frac{1}{2 t \zeta} & - \frac{1}{4 t} & \frac{\zeta - 2}{4 t \zeta}\\- \frac{1}{2} & \frac{1}{2} & \frac{1}{2} & - \frac{1}{2}\\0 & - \frac{1}{2 t \zeta} & \frac{1}{4 t} & - \frac{\zeta + 2}{4 t \zeta}\\\frac{1}{2} & - \frac{1}{2} & \frac{1}{2} & - \frac{1}{2}}
+    \\
+    &\underbrace{
+        \frac{1}{4}
+        \mat{- \i & - \i & 1 & 1\\\i & \i & 1 & 1\\- \frac{1}{\sqrt{\zeta^{2} - 1}} & \frac{1}{\sqrt{\zeta^{2} - 1}} & - \frac{\zeta}{\sqrt{\zeta^{2} - 1}} - 1 & \frac{\zeta}{\sqrt{\zeta^{2} - 1}} + 1\\\frac{1}{\sqrt{\zeta^{2} - 1}} & - \frac{1}{\sqrt{\zeta^{2} - 1}} & \frac{\zeta}{\sqrt{\zeta^{2} - 1}} - 1 & - \frac{\zeta}{\sqrt{\zeta^{2} - 1}} + 1}
     }_{
         P
     }
+\end{align*}
+\begin{gather*}
     \\[25pt]
     \exp(tM) = \exp(P^{-1} J P) = P^{-1} \exp(J) P
     \\[15pt]
     \exp(tM) = P^{-1} \mat{
-        e^{- 2 t} & e^{- 2 t} & 0 & 0\\0 & e^{- 2 t} & 0 & 0\\0 & 0 & e^{2 t} & e^{2 t}\\0 & 0 & 0 & e^{2 t}
+        e^{- 2 i t} & 0 & 0 & 0\\0 & e^{2 i t} & 0 & 0\\0 & 0 & e^{- 2 t \left(\zeta + \sqrt{\zeta^{2} - 1}\right)} & 0\\0 & 0 & 0 & e^{- 2 t \left(\zeta - \sqrt{\zeta^{2} - 1}\right)}
     } P
     \\[25pt]
 \end{gather*}
 \begin{gather*}
-    \exp(tM) = \scalebox{0.8}{$\mat{\frac{\left(- 2 t \zeta - \zeta + \left(- 2 t \zeta + \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4} & \frac{\zeta \left(2 t + \left(2 t - 1\right) e^{4 t} + 1\right) e^{- 2 t}}{4} & \frac{\left(t \zeta + \left(- t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2} & t \zeta \sinh{\left(2 t \right)}\\\frac{\zeta \left(- 2 t + \left(1 - 2 t\right) e^{4 t} - 1\right) e^{- 2 t}}{4} & \frac{\left(2 t \zeta + \zeta + \left(2 t \zeta - \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4} & - t \zeta \sinh{\left(2 t \right)} & \frac{\left(- t \zeta + \left(t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2}\\\frac{\left(t \zeta + \left(- t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2} & t \zeta \sinh{\left(2 t \right)} & \frac{\left(- 2 t \zeta + \zeta + \left(- 2 t \zeta - \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4} & \frac{\zeta \left(2 t + \left(2 t + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{4}\\- t \zeta \sinh{\left(2 t \right)} & \frac{\left(- t \zeta + \left(t \zeta + 1\right) e^{4 t} - 1\right) e^{- 2 t}}{2} & \frac{\zeta \left(- 2 t - \left(2 t + 1\right) e^{4 t} + 1\right) e^{- 2 t}}{4} & \frac{\left(2 t \zeta - \zeta + \left(2 t \zeta + \zeta + 2\right) e^{4 t} + 2\right) e^{- 2 t}}{4}}$}
+    \exp(tM) = \scalebox{0.3}{$\mat{\frac{e^{2 i t}}{4} + \frac{e^{- 2 i t}}{4} - \frac{e^{- 2 t \left(\zeta + \sqrt{\zeta^{2} - 1}\right)}}{4 \left(\zeta + \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1}} + \frac{e^{- 2 t \left(\zeta - \sqrt{\zeta^{2} - 1}\right)}}{4 \left(\zeta - \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1}} & \frac{e^{2 i t}}{4} + \frac{e^{- 2 i t}}{4} + \frac{e^{- 2 t \left(\zeta + \sqrt{\zeta^{2} - 1}\right)}}{4 \left(\zeta + \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1}} - \frac{e^{- 2 t \left(\zeta - \sqrt{\zeta^{2} - 1}\right)}}{4 \left(\zeta - \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1}} & \frac{\left(i \left(1 - \zeta^{2}\right) e^{4 t \left(\zeta + i\right)} - \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} + \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} + i \left(\zeta^{2} - 1\right) e^{4 t \zeta}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)} & \frac{\left(i \left(1 - \zeta^{2}\right) e^{4 t \left(\zeta + i\right)} + \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} - \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} + i \left(\zeta^{2} - 1\right) e^{4 t \zeta}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)}\\\frac{e^{2 i t}}{4} + \frac{e^{- 2 i t}}{4} + \frac{e^{- 2 t \left(\zeta + \sqrt{\zeta^{2} - 1}\right)}}{4 \left(\zeta + \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1}} - \frac{e^{- 2 t \left(\zeta - \sqrt{\zeta^{2} - 1}\right)}}{4 \left(\zeta - \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1}} & \frac{e^{2 i t}}{4} + \frac{e^{- 2 i t}}{4} - \frac{e^{- 2 t \left(\zeta + \sqrt{\zeta^{2} - 1}\right)}}{4 \left(\zeta + \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1}} + \frac{e^{- 2 t \left(\zeta - \sqrt{\zeta^{2} - 1}\right)}}{4 \left(\zeta - \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1}} & \frac{\left(i \left(1 - \zeta^{2}\right) e^{4 t \left(\zeta + i\right)} + \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} - \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} + i \left(\zeta^{2} - 1\right) e^{4 t \zeta}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)} & \frac{\left(i \left(1 - \zeta^{2}\right) e^{4 t \left(\zeta + i\right)} - \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} + \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} + i \left(\zeta^{2} - 1\right) e^{4 t \zeta}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)}\\\frac{\left(i \left(1 - \zeta^{2}\right) e^{4 t \zeta} + \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} - \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} + i \left(\zeta^{2} - 1\right) e^{4 t \left(\zeta + i\right)}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)} & \frac{\left(i \left(1 - \zeta^{2}\right) e^{4 t \zeta} - \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} + \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} + i \left(\zeta^{2} - 1\right) e^{4 t \left(\zeta + i\right)}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)} & \frac{\left(\left(- \zeta + \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} + \left(\zeta + \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} + \left(\zeta^{2} - 1\right) e^{4 t \zeta} + \left(\zeta^{2} - 1\right) e^{4 t \left(\zeta + i\right)}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)} & \frac{\left(\left(\zeta - \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} - \left(\zeta + \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} + \left(\zeta^{2} - 1\right) e^{4 t \zeta} + \left(\zeta^{2} - 1\right) e^{4 t \left(\zeta + i\right)}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)}\\\frac{\left(i \left(1 - \zeta^{2}\right) e^{4 t \zeta} - \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} + \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} + i \left(\zeta^{2} - 1\right) e^{4 t \left(\zeta + i\right)}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)} & \frac{\left(i \left(1 - \zeta^{2}\right) e^{4 t \zeta} + \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} - \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} + i \left(\zeta^{2} - 1\right) e^{4 t \left(\zeta + i\right)}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)} & \frac{\left(\left(\zeta - \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} - \left(\zeta + \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} + \left(\zeta^{2} - 1\right) e^{4 t \zeta} + \left(\zeta^{2} - 1\right) e^{4 t \left(\zeta + i\right)}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)} & \frac{\left(\left(- \zeta + \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta + \sqrt{\zeta^{2} - 1} + i\right)} + \left(\zeta + \sqrt{\zeta^{2} - 1}\right) \sqrt{\zeta^{2} - 1} e^{2 t \left(\zeta - \sqrt{\zeta^{2} - 1} + i\right)} + \left(\zeta^{2} - 1\right) e^{4 t \zeta} + \left(\zeta^{2} - 1\right) e^{4 t \left(\zeta + i\right)}\right) e^{- 2 t \left(2 \zeta + i\right)}}{4 \left(\zeta^{2} - 1\right)}}$}
     \\[25pt]
-    \exp(tM) |_{\zeta=0} = \mat{\cosh{\left(2 t \right)} & 0 & \sinh{\left(2 t \right)} & 0\\0 & \cosh{\left(2 t \right)} & 0 & \sinh{\left(2 t \right)}\\\sinh{\left(2 t \right)} & 0 & \cosh{\left(2 t \right)} & 0\\0 & \sinh{\left(2 t \right)} & 0 & \cosh{\left(2 t \right)}}
+    \exp(tM) |_{\zeta=0} = \mat{\cos{\left(2 t \right)} & 0 & \sin{\left(2 t \right)} & 0\\0 & \cos{\left(2 t \right)} & 0 & \sin{\left(2 t \right)}\\- \sin{\left(2 t \right)} & 0 & \cos{\left(2 t \right)} & 0\\0 & - \sin{\left(2 t \right)} & 0 & \cos{\left(2 t \right)}}
     \\[25pt]
 \end{gather*}
 
