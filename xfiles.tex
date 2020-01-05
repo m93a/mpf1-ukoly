@@ -260,6 +260,7 @@
     \\[5pt]
 \end{gather*}
 \begin{gather*}
+    \\
     q_1(t)|_{\zeta=0} = p_{10} \sin{\left(2 t \right)} + q_{10} \cos{\left(2 t \right)}
     \\[5pt]
     q_2(t)|_{\zeta=0} = p_{20} \sin{\left(2 t \right)} + q_{20} \cos{\left(2 t \right)}
@@ -316,7 +317,7 @@
 
             set key left top
             set xlabel '$q_1$'
-            set title '$\zeta = 0.5$'
+            set title '$\zeta = 0.2$'
 
             set xrange [-1.5:1.5]
             set yrange [-1.5:1.5]
@@ -334,7 +335,7 @@
             do for [i=1:words(comb)] {
                 w = word(comb,i)
                 if (!(macro eq '')) { macro = macro . ', '}
-                macro = macro . '"xfiles_z05_'.w.'.dat" w l not'
+                macro = macro . '"xfiles_z02_'.w.'.dat" w l not'
             }
 
             plot @macro
@@ -347,7 +348,7 @@
 
             set key left top
             set xlabel '$q_1$'
-            set title '$\zeta = 1.5$'
+            set title '$\zeta = 0.5$'
 
             set xrange [-1.5:1.5]
             set yrange [-1.5:1.5]
@@ -365,7 +366,7 @@
             do for [i=1:words(comb)] {
                 w = word(comb,i)
                 if (!(macro eq '')) { macro = macro . ', '}
-                macro = macro . '"xfiles_z15_'.w.'.dat" w l not'
+                macro = macro . '"xfiles_z05_'.w.'.dat" w l not'
             }
     
             plot @macro
@@ -381,7 +382,7 @@
     }
 }
 \centering
-\includegraphics[height=5cm,keepaspectratio]{arecibo.png}
+\includegraphics[height=15cm,keepaspectratio]{arecibo.png}
 
 
 \end{document}

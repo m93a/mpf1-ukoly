@@ -4,7 +4,7 @@ set output 'xfiles-gnuplottex-fig3.tex'
 
             set key left top
             set xlabel '$q_1$'
-            set title '$\zeta = 1.5$'
+            set title '$\zeta = 0.5$'
 
             set xrange [-1.5:1.5]
             set yrange [-1.5:1.5]
@@ -22,7 +22,7 @@ set output 'xfiles-gnuplottex-fig3.tex'
             do for [i=1:words(comb)] {
                 w = word(comb,i)
                 if (!(macro eq '')) { macro = macro . ', '}
-                macro = macro . '"xfiles_z15_'.w.'.dat" w l not'
+                macro = macro . '"xfiles_z05_'.w.'.dat" w l not'
             }
 
             plot @macro
