@@ -3,6 +3,7 @@
 \documentclass{article}
 \usepackage{luaotfload}
 \usepackage{graphicx}
+\usepackage{amsmath}
 
 % load cmuntt here not from lua (for everyone except me, it seems)
 \font\cmuntt = cmuntt at 12pt \cmuntt
@@ -65,6 +66,8 @@ end,
 \repeat
 }
 
+\newcommand{\negphantom}[1]{\settowidth{\dimen0}{#1}\hspace*{-\dimen0}}
+
 \def\sqrt#1{^^^^221a\overline{#1}}
 
 
@@ -80,6 +83,34 @@ end,
 \def\={\; = \;}
 \def\+{\; + \;}
 \def\-{\; - \;}
+\def\pm{\; ± \;}
+\def\times{\; × \;}
+\def\cdot{\; · \;}
+
+\def\int{
+  \raisebox{-\height}{J}
+  \negphantom{J}
+  \hspace{0.1em}
+  I\negphantom{I}
+  \hspace{0.1em}
+  \raisebox{2\depth}{\scalebox{-1}[-1]{J}}
+  \;
+}
+
+\def\oint{
+  \hspace{0.1em}
+  C
+  \hspace{-0.4em}
+  \raisebox{-\height}{J}
+  \negphantom{J}
+  \hspace{0.1em}
+  I\negphantom{I}
+  \hspace{0.1em}
+  \raisebox{2\depth}{\scalebox{-1}[-1]{J}}
+  \hspace{-0.4em}
+  \reflectbox{C}
+  \;\;
+}
 
 \renewcommand{\d}[1]{\;\const{d}#1}
 \newcommand{\dd}[2]{\frac{\const{d} #1}{\const{d} #2} \;}
@@ -215,6 +246,69 @@ Za $\Hat{x}, \; \Hat{y}, \; \partial / \partial x$ a $\partial / \partial y$ mů
 Musím se přiznat, že si nepamatuji, že by odvození vzorce pro $\nabla$ v obecných orthogonálních souřadnicích bylo tak náročné - obzvlášť na psacím stroji mi trvalo zapsat postup několik hodin. Bohužel, peníze na nový počítač teď rozhodně nemám, budu to tedy muset nějak vydržet. Protože ale technicky vzato už je čtvrtého, pro dnešek toho bylo, myslím, víc než dost.
 
 \section*{Pokračuji v měření / 4. jan.}
+\[
+  \begin{array}{cccc}
+    \int & \nabla \times a \cdot dS \= & \oint & a \cdot ds \\[2pt]
+    S & & \partial S
+  \end{array}
+\]
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{krtous_element.png}
+\end{figure}
+\begin{align*}
+  X_{j±} \= X \pm Δs_j
+\end{align*}
+
+\begin{align*}
+  \nabla \times a \cdot ΔS &\=
+  a \cdot Δs \\
+  \nabla \times a \cdot ( Δx^1 \times Δx^2 ) &\=
+  a \cdot Δs_1(X_{2-}) + a \cdot Δs_2(X_{1-}) -
+  a \cdot Δs_1(X_{2+}) - a \cdot Δs_2(X_{1+}) \\
+  \nabla \times a \cdot h_1 h_2 ( Δξ^1 \times Δξ^2 ) &\=
+  -Δs_2 \cdot \nabla (a^1 Δs_1) + Δs_1 \cdot \nabla (a^2 Δs_2) \\
+  h_1 h_2 \nabla \times a \cdot ΔS' &\=
+  Δξ^1 Δξ^2 ( - \pd{}{ξ^2}(a^1 h_1) + \pd{}{ξ^1}(a^2 h_2) )
+\end{align*}
+
+Složky rotace v obecných orthogonálních souřadnicích jsou tedy:
+\begin{align*}
+  \nabla \times a
+  &\= \frac{1}{h_2 h_3}
+  ( \pd{a^3 h_3}{ξ_2}-\pd{a^2 h_2}{ξ_3} ) \hat{ξ}_1 \\
+  &\+ \frac{1}{h_3 h_1}
+  ( \pd{a^1 h_1}{ξ_3}-\pd{a^3 h_3}{ξ_1} ) \hat{ξ}_2 \\
+  &\+ \frac{1}{h_1 h_2}
+  ( \pd{a^2 h_2}{ξ_1}-\pd{a^1 h_1}{ξ_2} ) \hat{ξ}_3
+\end{align*}
+
+Teď už jen dosadím Lamého koeficienty a máme vzorec pro rotaci ve válcových souřadnicích:
+\begin{align*}
+  \nabla \times a
+  &\= \frac{1}{r}
+  ( \pd{a_\text{z}}{φ}-\pd{a_\text{φ}}{z} ) \hat{r} \\
+  &\+
+  ( \pd{a_\text{r}}{z}-\pd{a_\text{z}}{r} ) \hat{φ} \\
+  &\+ \frac{1}{r}
+  ( \pd{r a_\text{φ}}{r}-\pd{a_\text{r}}{φ} ) \hat{z}
+\end{align*}
+
+Jediná nenulová derivace $v(r,φ,z)$ je $\partial v_\text{φ} / \partial r$, proto v rotaci pole zbude jenom jeden člen: 
+\begin{align*}
+  \nabla \times v
+  &\= \frac{1}{r} ( \pd{}{r} r v_\text{φ} \- \pd{a_\text{r}}{φ} v_\text{φ} ) \hat{z} \\
+  &\= \frac{1}{r} (\pd{}{r} r \frac{Γ}{2πr} \- \pd{a_\text{r}}{φ} 0 ) \hat{z} \\
+  &\= \frac{1}{r} (\pd{}{r} \frac{Γ}{2π}) \hat{z} \\
+  &\= \frac{1}{r} 0 \hat{z} \;\;\; \= \;\;\; 0.
+\end{align*}
+Vidíme, že rotace je nulová. Mezitím pro cirkulaci kolem osy víru platí:
+\[
+  \begin{array}{cccc}
+    \oint & v \cdot ds \\[2pt]
+    c
+  \end{array}
+\]
 
 \end{document}
