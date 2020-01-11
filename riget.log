@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2019.12.11)  11 JAN 2020 01:43
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2019.12.11)  11 JAN 2020 03:03
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/home/m93a/Dokumenty/MpF1/riget
@@ -23,7 +23,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.650 seconds
+luaotfload | main : initialization completed in 0.657 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -464,38 +464,38 @@ Overfull \hbox (7.80017pt too wide) in paragraph at lines 251--252
  []
 
 
-Overfull \hbox (7.80017pt too wide) in paragraph at lines 251--252
-\myfont diskusí svého živ-ota. Je-den z umý-vačů se totiž, navz-dory
- []
-
-
-Overfull \hbox (26.70018pt too wide) in paragraph at lines 251--252
-\myfont svým ge-net-ickým pre-dis-poz-icím, zře-jmě rozumí fyz-ice na mno-
- []
-
-
-Overfull \hbox (14.10017pt too wide) in paragraph at lines 251--252
-\myfont hem vyšší úrovni, než kde-jaký akademik. A potvrdil mi mou
- []
-
-
-Overfull \hbox (1.50017pt too wide) in paragraph at lines 251--252
-\myfont teorii! Na území nemoc-nice se skutečně otevírá brána do
- []
-
-
-Overfull \hbox (14.10017pt too wide) in paragraph at lines 251--252
-\myfont duál-ního světa, což je jev, který je vždy do-provázen sil-
- []
-
-
-Overfull \hbox (33.00018pt too wide) in paragraph at lines 251--252
-\myfont ným et-er-ickým vírem. Nemůžu se dočkat, až budu zpět v nemoc-
+Overfull \hbox (20.40018pt too wide) in paragraph at lines 251--252
+\myfont diskusí svého živ-ota. Je-den z umý-vačů totiž, navz-dory svým
  []
 
 
 Overfull \hbox (7.80017pt too wide) in paragraph at lines 251--252
-\myfont nici! Mez-itím ale potře-buji vypra-co-vat teo-ret-ický model,
+\myfont ge-net-ickým pre-dis-poz-icím, zře-jmě rozumí fyz-ice na mno-hem
+ []
+
+
+Overfull \hbox (39.30019pt too wide) in paragraph at lines 251--252
+\myfont vyšší úrovni, než kde-jaký akademik. A potvrdil mi mou teorii!
+ []
+
+
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 251--252
+\myfont Na území nemoc-nice se skutečně otevírá brána do duál-ního
+ []
+
+
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 251--252
+\myfont světa, což je jev, který je vždy do-provázen sil-ným et-er-
+ []
+
+
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 251--252
+\myfont ickým vírem. Nemůžu se dočkat, až budu zpět v nemoc-nici!
+ []
+
+
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 251--252
+\myfont Mez-itím ale potře-buji vypra-co-vat teo-ret-ický model, který
  []
 
 
@@ -523,44 +523,59 @@ File: krtous_element.png Graphic file (type png)
 <use krtous_element.png>
 Package luatex.def Info: krtous_element.png  used on input line 264.
 (luatex.def)             Requested size: 207.0021pt x 193.40494pt.
+
+Overfull \hbox (10.20016pt too wide) in paragraph at lines 266--267
+[]\myfont Použi-jeme in-te-graci na in-finites-imálně malém čtverci o
+ []
+
+
+Overfull \hbox (26.9556pt too wide) in paragraph at lines 266--267
+\myfont rozměru $Δs[] × Δs[]$, cen-trovaném v bodě $X$. Pro zkrá-cení zápisu
+ []
+
 [4<./krtous_element.png>]
-Overfull \hbox (89.74355pt too wide) detected at line 280
+Overfull \hbox (3.90016pt too wide) in paragraph at lines 271--272
+[]\myfont Pro in-finites-imální plošky a úsečky ze Stokesova the-
+ []
+
+
+Overfull \hbox (89.74355pt too wide) detected at line 283
 []
  []
 
 
-Overfull \hbox (29.10017pt too wide) in paragraph at lines 282--283
+Overfull \hbox (29.10017pt too wide) in paragraph at lines 285--286
 []\myfont Složky ro-tace v obec-ných or-thogonál-ních souřad-nicích jsou
  []
 
 
-Overfull \hbox (16.50017pt too wide) in paragraph at lines 293--294
+Overfull \hbox (16.50017pt too wide) in paragraph at lines 296--297
 []\myfont Teď už jen dosadím Lamého ko-e-fi-cienty a máme vzorec pro
  []
 
 
-Overfull \hbox (42.20018pt too wide) in paragraph at lines 304--305
+Overfull \hbox (42.20018pt too wide) in paragraph at lines 307--308
 []\myfont Jed-iná nenulová derivace $v(r,φ,z)$ je $[]v[]/[]r$, proto v rotaci
  []
 
-
-Overfull \hbox (7.80017pt too wide) in paragraph at lines 311--313
+[5]
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 314--316
 \myfont Vidíme, že ro-tace je nulová. Mez-itím pro cirku-laci kolem
  []
 
-[5] [6] (./riget.aux))
+[6] (./riget.aux))
 
 Here is how much of LuaTeX's memory you used:
  2187 strings out of 494480
  100000,106986 words of node,token memory allocated
  542 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 32 attribute, 48 glue_spec, 32 attribute_list, 1 write nodes
-   avail lists: 2:1012,3:246,4:8,5:174,6:1811,7:650,8:69,9:764,11:87
+   avail lists: 2:928,3:246,4:8,5:170,6:1811,7:562,8:67,9:745,11:87
  6213 multiletter control sequences out of 65536+600000
  31 fonts using 2664927 bytes
  41i,11n,25p,749b,233s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/cm-unicode/cmuntt.otf>
-Output written on riget.pdf (6 pages, 256876 bytes).
+Output written on riget.pdf (6 pages, 265564 bytes).
 
 PDF statistics: 32 PDF objects out of 1000 (max. 8388607)
  18 compressed objects within 1 object stream
