@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2019.12.11)  11 JAN 2020 00:08
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2019.12.11)  11 JAN 2020 01:43
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/home/m93a/Dokumenty/MpF1/riget
@@ -23,7 +23,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.581 seconds
+luaotfload | main : initialization completed in 0.650 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -428,52 +428,142 @@ Overfull \hbox (14.10017pt too wide) in paragraph at lines 245--247
 \myfont nicky vzato už je čtvrtého, pro dnešek toho bylo, mys-lím,
  []
 
-<krtous_element.png, id=10, 87.9285pt x 82.1469pt>
+
+Overfull \hbox (1.50017pt too wide) in paragraph at lines 249--250
+\myfont Měl bych být více obezřetný – kromě toho, že se mi dnes
+ []
+
+
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 249--250
+\myfont po-dařilo spálit in-ter-fer-ometr, téměř mě ob-jevil per-sonál
+ []
+
+
+Overfull \hbox (33.00018pt too wide) in paragraph at lines 249--250
+\myfont nemoc-nice. Tedy ne téměř – úplně. Naštěstí to ale byli jenom
+ []
+
+
+Overfull \hbox (39.30019pt too wide) in paragraph at lines 249--250
+\myfont dva men-tálně postižení umý-vači ná-dobí, kteří ani nepostřehli,
+ []
+
+[3]
+Overfull \hbox (29.10017pt too wide) in paragraph at lines 251--252
+[]\myfont Štěstí mně ale za-tím přálo víc, než bych si tro-ufal před-
+ []
+
+
+Overfull \hbox (33.00018pt too wide) in paragraph at lines 251--252
+\myfont poví-dat. Ne-jenom, že jsem přes svou neopa-trnost zůstal neod-
+ []
+
+
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 251--252
+\myfont halen, navíc jsem měl jednu z ne-j-plod-nějších fyzikál-ních
+ []
+
+
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 251--252
+\myfont diskusí svého živ-ota. Je-den z umý-vačů se totiž, navz-dory
+ []
+
+
+Overfull \hbox (26.70018pt too wide) in paragraph at lines 251--252
+\myfont svým ge-net-ickým pre-dis-poz-icím, zře-jmě rozumí fyz-ice na mno-
+ []
+
+
+Overfull \hbox (14.10017pt too wide) in paragraph at lines 251--252
+\myfont hem vyšší úrovni, než kde-jaký akademik. A potvrdil mi mou
+ []
+
+
+Overfull \hbox (1.50017pt too wide) in paragraph at lines 251--252
+\myfont teorii! Na území nemoc-nice se skutečně otevírá brána do
+ []
+
+
+Overfull \hbox (14.10017pt too wide) in paragraph at lines 251--252
+\myfont duál-ního světa, což je jev, který je vždy do-provázen sil-
+ []
+
+
+Overfull \hbox (33.00018pt too wide) in paragraph at lines 251--252
+\myfont ným et-er-ickým vírem. Nemůžu se dočkat, až budu zpět v nemoc-
+ []
+
+
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 251--252
+\myfont nici! Mez-itím ale potře-buji vypra-co-vat teo-ret-ický model,
+ []
+
+
+Overfull \hbox (10.20016pt too wide) in paragraph at lines 253--254
+[]\myfont Naštěstí i v této oblasti mi přál osud. V šu-plíku pra-
+ []
+
+
+Overfull \hbox (14.10017pt too wide) in paragraph at lines 253--254
+\myfont cov-ního stolu v mém hotelovém pokoji jsem ob-jevil zápisky
+ []
+
+
+Overfull \hbox (14.10017pt too wide) in paragraph at lines 253--254
+\myfont jistého P. Kr-touše z roku 1984, kde bylo mj. odvození ro-
+ []
+
+
+Overfull \hbox (26.70018pt too wide) in paragraph at lines 253--254
+\myfont tace pro obecné or-thogonální souřad-nice. Klíčové je použití
+ []
+
+<krtous_element.png, id=13, 87.9285pt x 82.1469pt>
 File: krtous_element.png Graphic file (type png)
 <use krtous_element.png>
-Package luatex.def Info: krtous_element.png  used on input line 258.
+Package luatex.def Info: krtous_element.png  used on input line 264.
 (luatex.def)             Requested size: 207.0021pt x 193.40494pt.
-[3]
-Overfull \hbox (89.74355pt too wide) detected at line 274
+[4<./krtous_element.png>]
+Overfull \hbox (89.74355pt too wide) detected at line 280
 []
  []
 
 
-Overfull \hbox (29.10017pt too wide) in paragraph at lines 276--277
+Overfull \hbox (29.10017pt too wide) in paragraph at lines 282--283
 []\myfont Složky ro-tace v obec-ných or-thogonál-ních souřad-nicích jsou
  []
 
 
-Overfull \hbox (16.50017pt too wide) in paragraph at lines 287--288
+Overfull \hbox (16.50017pt too wide) in paragraph at lines 293--294
 []\myfont Teď už jen dosadím Lamého ko-e-fi-cienty a máme vzorec pro
  []
 
-[4<./krtous_element.png>]
-Overfull \hbox (42.20018pt too wide) in paragraph at lines 298--299
+
+Overfull \hbox (42.20018pt too wide) in paragraph at lines 304--305
 []\myfont Jed-iná nenulová derivace $v(r,φ,z)$ je $[]v[]/[]r$, proto v rotaci
  []
 
 
-Overfull \hbox (7.80017pt too wide) in paragraph at lines 305--307
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 311--313
 \myfont Vidíme, že ro-tace je nulová. Mez-itím pro cirku-laci kolem
  []
 
-[5] (./riget.aux))
+[5] [6] (./riget.aux))
 
 Here is how much of LuaTeX's memory you used:
  2187 strings out of 494480
  100000,106986 words of node,token memory allocated
  542 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 32 attribute, 48 glue_spec, 32 attribute_list, 1 write nodes
-   avail lists: 2:845,3:246,4:8,5:162,6:1811,7:546,8:66,9:593,11:87
+   avail lists: 2:1012,3:246,4:8,5:174,6:1811,7:650,8:69,9:764,11:87
  6213 multiletter control sequences out of 65536+600000
  31 fonts using 2664927 bytes
  41i,11n,25p,749b,233s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/cm-unicode/cmuntt.otf>
-Output written on riget.pdf (5 pages, 213677 bytes).
+Output written on riget.pdf (6 pages, 256876 bytes).
 
-PDF statistics: 29 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+PDF statistics: 32 PDF objects out of 1000 (max. 8388607)
+ 18 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
