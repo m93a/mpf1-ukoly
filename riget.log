@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2019.12.11)  11 JAN 2020 03:03
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2019.12.11)  11 JAN 2020 03:19
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/home/m93a/Dokumenty/MpF1/riget
@@ -23,7 +23,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.657 seconds
+luaotfload | main : initialization completed in 0.895 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -563,7 +563,62 @@ Overfull \hbox (7.80017pt too wide) in paragraph at lines 314--316
 \myfont Vidíme, že ro-tace je nulová. Mez-itím pro cirku-laci kolem
  []
 
-[6] (./riget.aux))
+
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 330--332
+\myfont Vidíme, že ro-tace a cirku-lace ne-s-plňují Stokesův the-o-rém
+ []
+
+
+Overfull \hbox (7.80017pt too wide) in paragraph at lines 330--332
+\myfont – to je zjevně způ-sobeno sin-gu-lar-i-tou ve středu et-er-ick-
+ []
+
+
+Overfull \hbox (1.50017pt too wide) in paragraph at lines 330--332
+\myfont ého víru. Tato et-er-ická sin-gu-larita je el-e-men-tárním po-
+ []
+
+
+Overfull \hbox (33.00018pt too wide) in paragraph at lines 330--332
+\myfont jítkem mezi dvěma světy, a jak vy-plývá z teorie blíže disku-
+ []
+
+
+Overfull \hbox (20.40018pt too wide) in paragraph at lines 330--332
+\myfont to-vané v mé dok-torské práci, jedinně v pří-padě, kdy se et-
+ []
+
+
+Overfull \hbox (6.311pt too wide) in paragraph at lines 330--332
+\myfont er-ické a anti-eterické ex-ci-tace přesně vyruší a $[] × v = 0$,
+ []
+
+
+Overfull \hbox (26.70018pt too wide) in paragraph at lines 330--332
+\myfont tehdy je pro člověka bezpečné mezi světy pro-jít. Z naměřené
+ []
+
+
+Overfull \hbox (45.60019pt too wide) in paragraph at lines 330--332
+\myfont hod-noty $Γ$ usuzuji, že bude vír sta-bilní řá-dově po dobu desítek
+ []
+
+
+Overfull \hbox (14.10017pt too wide) in paragraph at lines 330--332
+\myfont hodin, proto nes-mím pro-mar-nit šanci. Zí-tra vyh-ledám střed
+ []
+
+
+Overfull \hbox (1.50017pt too wide) in paragraph at lines 330--332
+\myfont víru a jako první člověk se oc-itnu zcela mimo náš ča-so-
+ []
+
+
+Overfull \hbox (33.00018pt too wide) in paragraph at lines 330--332
+\myfont pros-tor. Nemohu se dočkat, co mě čeká! Hned po návratu podám
+ []
+
+[6] [7] (./riget.aux))
 
 Here is how much of LuaTeX's memory you used:
  2187 strings out of 494480
@@ -573,12 +628,12 @@ Here is how much of LuaTeX's memory you used:
    avail lists: 2:928,3:246,4:8,5:170,6:1811,7:562,8:67,9:745,11:87
  6213 multiletter control sequences out of 65536+600000
  31 fonts using 2664927 bytes
- 41i,11n,25p,749b,233s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 41i,11n,25p,775b,233s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/cm-unicode/cmuntt.otf>
-Output written on riget.pdf (6 pages, 265564 bytes).
+Output written on riget.pdf (7 pages, 291149 bytes).
 
-PDF statistics: 32 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
+PDF statistics: 35 PDF objects out of 1000 (max. 8388607)
+ 20 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
